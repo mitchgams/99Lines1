@@ -1,3 +1,23 @@
 body {
     background-color: aliceblue;
 }
+h1 {
+    color: navy;
+    text-align: center;
+}
+
+.friend {
+    width: 50vw;
+    padding: 10px;
+    padding-top: 7px;
+    background-color: gray;
+    color: rgb(145, 255, 0);
+    box-shadow: 11px 11px 15px 0px rgba(0,0,0,0.73);
+    font-weight: bold;
+    margin: auto;
+    border-radius: 7px;
+}
+
+.friend h3 {
+    text-transform: uppercase;
+}
