@@ -3,8 +3,7 @@ let singButton = document.createElement("BUTTON");
 let buttonText = document.createTextNode("Sing!");
 singButton.appendChild(buttonText);
 document.body.appendChild(singButton);
-singButton.id = "singButton";
-document.getElementById("singButton").addEventListener("click", singConsole);
+document.getElementsByTagName("button")[0].addEventListener("click", singConsole);
 
 function singConsole(e) {
     for(let i = 0; friends.length > i; i++) {
