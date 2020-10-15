@@ -1,15 +1,30 @@
 let friends = ['Brandon', 'Dillon', 'Joe', 'Carl', 'Frank'];
-var num = null;
-for(i = 0; friends.length > i; i++) {
-    for(j = 1; 100 > j; j++) {
-        if(num != 0) {
-            num = 100 - j;
-            nextNum = num - 1;
-            if(num != 1) {
-                console.log(num + " lines of code in the file, " + num + " lines of code; " + friends[i] + " strikes one out, clears it all out, " + nextNum +" lines of code in the file");
+let singButton = document.createElement("BUTTON");
+let buttonText = document.createTextNode("Sing!");
+singButton.appendChild(buttonText);
+document.body.appendChild(singButton);
+singButton.id = "singButton";
+document.getElementById("singButton").addEventListener("click", singConsole);
+
+function singConsole(e) {
+    for(let i = 0; friends.length > i; i++) {
+        let friendDiv = document.createElement("DIV");
+        friendDiv.classList.add(friends[i]);
+        document.body.appendChild(friendDiv);
+        let h3 = document.createElement("H3");
+        let h3Text = document.createTextNode(friends[i]);
+        h3.appendChild(h3Text);
+        document.getElementsByClassName(friends[i])[0].appendChild(h3);
+        for(let j = 99; j > 0; j--) {
+            let pText = null;
+            let p = document.createElement("P");
+            if(j === 1) {
+                pText = document.createTextNode(j + " line of code in the file, " + j + " line of code; " + friends[i] + " strikes one out, clears it all out, no more of code in the file");
             } else {
-                console.log(num + " line of code in the file, " + num + " line of code; " + friends[i] + " strikes one out, clears it all out, " + nextNum +" lines of code in the file");
+                pText = document.createTextNode(j + " lines of code in the file, " + j + " lines of code; " + friends[i] + " strikes one out, clears it all out, " + (j-1) + " lines of code in the file");
             }
+            p.appendChild(pText);
+            document.getElementsByClassName(friends[i])[0].appendChild(p);
         }
     }
 }
